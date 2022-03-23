@@ -79,22 +79,7 @@ signinbtn.addEventListener("click", (e) => {
     // The signed-in user info.
     const user = result.user;
     onAuthStateChanged(auth, (user) => {
-  if (user) {
-      console.log(user)
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    profilebtn.classList.remove('hide');
-    signoutbtn.classList.remove('hide');
-    signinbtn.classList.add('hide');
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    profilebtn.classList.add('hide');
-    signoutbtn.classList.add('hide');
-    signinbtn.classList.remove('hide');
-  }
+  
 });
 
     // ...
@@ -117,24 +102,6 @@ const user = auth.currentUser;
 signoutbtn.addEventListener("click", (e) => {
   console.log(0)
   signOut(auth).then(() => {
-    onAuthStateChanged(auth, (user) => {
-  if (user) {
-      console.log(user)
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    profilebtn.classList.remove('hide');
-    signoutbtn.classList.remove('hide');
-    signinbtn.classList.add('hide');
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    profilebtn.classList.add('hide');
-    signoutbtn.classList.add('hide');
-    signinbtn.classList.remove('hide');
-  }
-});
 
     // Sign-out successful.
   }).catch((error) => {
@@ -150,6 +117,29 @@ signoutbtn.addEventListener("click", (e) => {
 
   </script>
 <!--<script src="app.js"></script>-->
+<script>
 
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user)
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    profilebtn.classList.remove('hide');
+    signoutbtn.classList.remove('hide');
+    signinbtn.classList.add('hide');
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    profilebtn.classList.add('hide');
+    signoutbtn.classList.add('hide');
+    signinbtn.classList.remove('hide');
+    location.reload();
+
+  }
+});
+    
+</script>
 </body>
 </html>
