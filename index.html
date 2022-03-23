@@ -65,6 +65,8 @@
   const auth = getAuth();
 
 const signinbtn=document.getElementById('auth-btn')
+const profilebtn=document.getElementById('profile-btn')
+const signoutbtn=document.getElementById('signout-btn')
 
 
 signinbtn.addEventListener("click", (e) => {
@@ -89,9 +91,18 @@ signinbtn.addEventListener("click", (e) => {
   });
 
 })
+
+signoutbtn.addEventListener("click", (e) => {
+  console.log(0)
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+})
 var user = firebase.auth().currentUser;
-const profilebtn=document.getElementById('profile-btn')
-const signoutbtn=document.getElementById('signout-btn')
+
+
 
 if (user) {
     profilebtn.classList.remove('hide');
