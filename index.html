@@ -78,6 +78,25 @@ signinbtn.addEventListener("click", (e) => {
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    onAuthStateChanged(auth, (user) => {
+  if (user) {
+      console.log(user)
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    profilebtn.classList.remove('hide');
+    signoutbtn.classList.remove('hide');
+    signinbtn.classList.add('hide');
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    profilebtn.classList.add('hide');
+    signoutbtn.classList.add('hide');
+    signinbtn.classList.remove('hide');
+  }
+});
+
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -98,14 +117,9 @@ const user = auth.currentUser;
 signoutbtn.addEventListener("click", (e) => {
   console.log(0)
   signOut(auth).then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
-
-
-  onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, (user) => {
   if (user) {
+      console.log(user)
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     profilebtn.classList.remove('hide');
@@ -122,6 +136,13 @@ signoutbtn.addEventListener("click", (e) => {
   }
 });
 
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+
+
+  
 })
 
 
