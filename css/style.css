@@ -9,7 +9,7 @@
 body{
     width: 100%;
     height: 100%;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
     background: linear-gradient(90deg ,#ffffff99,#ffffffee), url(../img/bgblur.png);
     background-size: 120%;
     background-position: center;
@@ -112,7 +112,12 @@ button{
     cursor: pointer;
 
 }
-
+.logout-btn p{
+    background: linear-gradient(to bottom, #27aae1,#0077e7);
+    background-clip: text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
 .auth-links{
     display: flex;
 }

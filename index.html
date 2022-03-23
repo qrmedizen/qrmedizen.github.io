@@ -21,12 +21,15 @@
             <div class="horz-bar">
                 <h1 class="logo-title">QRMedizen</h1>
                 <div class="auth-links">
-                    <button class="auth-btn" id="auth-btn">
+                    <button class="auth-btn hide" id="auth-btn">
                             <p class="btn-text">Login/Register</p>
                     </button>
-                    <button class="auth-btn hide" id="profile-btn">
+                    <button class="auth-btn " id="profile-btn">
                         <p class="btn-text">Profile</p>
                 </button>
+                <button class="logout-btn " id="signout-btn">
+                    <p class="btn-text">Logout</p>
+            </button>
                 </div>
 
             </div>
@@ -86,7 +89,18 @@ signinbtn.addEventListener("click", (e) => {
   });
 
 })
+var user = firebase.auth().currentUser;
+const profilebtn=document.getElementById('profile-btn')
+const signoutbtn=document.getElementById('signout-btn')
 
+if (user) {
+    profilebtn.classList.remove('hide');
+    signoutbtn.classList.remove('hide');
+    signinbtn.classList.add('hide');
+} else {
+    profilebtn.classList.add('hide');
+    signoutbtn.classList.add('hide');
+    signinbtn.classList.remove('hide');}
 
   </script>
 <!--<script src="app.js"></script>-->
