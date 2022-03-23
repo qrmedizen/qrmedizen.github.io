@@ -78,9 +78,7 @@ signinbtn.addEventListener("click", (e) => {
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    onAuthStateChanged(auth, (user) => {
-  
-});
+    
 
     // ...
   }).catch((error) => {
@@ -118,7 +116,9 @@ signoutbtn.addEventListener("click", (e) => {
   </script>
 <!--<script src="app.js"></script>-->
 <script>
-
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+ 
 onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user)
