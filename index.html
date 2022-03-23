@@ -111,14 +111,6 @@ signoutbtn.addEventListener("click", (e) => {
 })
 
 
-
-
-  </script>
-<!--<script src="app.js"></script>-->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-  import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
- 
 onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user)
@@ -139,7 +131,9 @@ onAuthStateChanged(auth, (user) => {
 
   }
 });
-    
-</script>
+
+  </script>
+<!--<script src="app.js"></script>-->
+
 </body>
 </html>
