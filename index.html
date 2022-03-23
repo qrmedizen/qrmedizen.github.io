@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRMedizen</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="navbar">
+            <img src="img/logo final.svg" alt="" class="logo">
+            <ul class="nav-links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About</a></li>
+                <li class="link"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="horz-bar">
+                <h1 class="logo-title">QRMedizen</h1>
+                <div class="auth-links">
+                    <button class="auth-btn" id="auth-btn">
+                            <p class="btn-text">Login/Register</p>
+                    </button>
+                    <button class="auth-btn hide" id="profile-btn">
+                        <p class="btn-text">Profile</p>
+                </button>
+                </div>
+
+            </div>
+            <div class="main-wrapper">
+                <h1 class="main-head">
+                     Digitize your medical data              
+                </h1>
+                <p class="subhead">
+                   We store your medical data in a way that it can be obtained by authorized personnel in case of emergency
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyDSCjsVUrQ57OTfsapVc5LDSqf7_RcPnG4",
+    authDomain: "qr-auth-2a652.firebaseapp.com",
+    projectId: "qr-auth-2a652",
+    storageBucket: "qr-auth-2a652.appspot.com",
+    messagingSenderId: "218316837225",
+    appId: "1:218316837225:web:1732aa7a5ef69eee902df8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const provider = new GoogleAuthProvider();
+
+  const auth = getAuth();
+
+const signinbtn=document.getElementById('auth-btn')
+
+
+signinbtn.addEventListener("click", (e) => {
+  console.log(1)
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+
+})
+
+
+  </script>
+<!--<script src="app.js"></script>-->
+
+</body>
+</html>
