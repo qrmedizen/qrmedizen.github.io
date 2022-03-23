@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRMedizen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <script src="app.js"></script>
+   
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="navbar">
+            <img src="img/logo final.svg" alt="" class="logo">
+            <ul class="nav-links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About</a></li>
+                <li class="link"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="horz-bar">
+                <h1 class="logo-title">QRMedizen</h1>
+                <div class="auth-links">
+                    <button class="auth-btn" id="auth-btn">
+                            <p class="btn-text">Login/Register</p>
+                    </button>
+                    <button class="auth-btn hide" id="profile-btn">
+                        <p class="btn-text">Profile</p>
+                </button>
+                </div>
+
+            </div>
+            <div class="main-wrapper">
+                <head>
+                    <title>Medical Form</title>
+                </head>
+                <body>
+                    
+                            
+                <form id="form" method="post">
+             
+                    <div class="twocoldiv">
+                    <div class="labeldiv">
+                        <label for="first name">First Name:</label>
+                     <input type="text" name="First Name" id="First-name" class="two" placeholder="Enter your first, second name">
+                     </div>
+                     <div class="labeldiv">
+                        <label for="last name"> Last name:</label>
+                     <input type="text" name="Last Name" id="Last-name" class="two" placeholder="Enter your last name">
+                        </div>
+                        </div>
+                                <div class="labeldiv">
+                                    <label for="sex">Sex:</label>
+                                <div class="sexchoices">
+                                    <input type="radio" name="Sex" id="Male">
+                                <span id="Male">Male</span>
+                                <input type="radio" name="Sex" id="Female">
+                                <span id="Female">Female</span>
+                                </div>
+                                </div>
+                                
+                               <div class="labeldiv">
+                                <label for="age">Age:</label>
+                                <input type="number" name="Age" id="Age" class="one" placeholder="Enter your age">
+
+                               </div>
+                               <div class="labeldiv">
+                                <label for="Birthdate">Birthdate:</label>
+                                <input type="date" name="Birthdate" id="Birthdate" class="one">
+
+                               </div>
+
+                                <div class="labeldiv">
+                                    <label for="Phone Number">Phone Number:</label>
+                                <input type="text" name="Phone Number" id="Phone-Number" class="one" placeholder="09xxxxxxxxx">
+
+                                </div>
+                                <div class="labeldiv">
+                                    <label for="Occupation">Occupation:</label>
+                                <input type="text" name="Occupation" id="Occupation" class="one">
+
+                                </div>
+
+                               <div class="labeldiv">
+                                <label for="Marital Status">Marital Status:</label>
+                                <div>
+                                 <input type="radio" name="Marital Status" id="Single">
+                                 <span id="Single">Single</span>
+                                 <input type="radio" name="Marital Status" id="Separated">
+                                 <span id="Separated">Separated</span>
+                                 <input type="radio" name="Marital Status" id="Divorced">
+                                 <span id="Divorced">Divorced
+                                 </span>
+                                 <input type="radio" name="Marital Status" id="Widowed">
+                                 <span id="Widowed">Widowed</span>
+                                </div>
+                               </div>
+
+                               <div class="labeldiv">
+                                <label for="Address">Address:</label>
+                                <input type="text" name="Address" id="Address" class="one" placeholder="Street, Municipality">
+                                <input type="text" name="Address" id="Address" class="one" placeholder="City/Province, Zip Code">
+                               </div>
+
+                                <div>
+                                   <div class="labeldiv">
+                                    <label for="Emergency Contact Person">Emergency Contact Person:</label>
+                                    <input type="text" name="Emergency Contact Person" id="Emergency-contact-person" class="one" placeholder="First name, Last name">
+                                   </div>
+
+                                   <div class="labeldiv">
+                                    <label for="Emergency Contact Relation">Emergency Contact Relation:</label>
+                                    <input type="text" name="Emergency Contact Relation" id="Emergency-contact-relation" class="one" placeholder="Mother, Father, Sister, etc">
+                                   </div>
+
+                                   <div class="labeldiv">
+                                    <label for="Emergency Contact Number">Emergency Contact Number:</label>
+                                    <input type="text" name="Emergency Contact Number" id="Emergency-contact-number" class="one" placeholder="09xxxxxxxxx">
+                                   </div>
+
+                                    <div class="labeldiv">
+                                        <label for="Health Insurance Information">Health Insurance Information:</label>
+                                    <input type="text" name="Health Insurance Information" id="Health-insurance-information" class="one" placeholder="Leave blank if none/unknown">
+                                    </div>
+                                   
+                                    <div class="labeldiv">
+                                        <label for="Allergy/ies">Allergy/ies(Specify and list down):</label>
+                                <input type="text" name="Allergy/ies" id="Allergies" class="one" placeholder="Leave blank if none/unknown">
+                                    </div>
+
+                                <div class="labeldiv">
+                                    <label for="Asthma">Asthma(& Asthma action plan):</label>
+                                <input type="text" name="Asthma" id="Asthma" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                <div class="labeldiv">
+                                    <label for="Diabetes">Diabetes:</label>
+                                <div class="diabeteschoices">
+                                    <input type="radio" name="Diabetes" id="Type 1">
+                                    <span id="Type 1">Type 1</span>
+                                    <input type="radio" name="Diabetes" id="Type 2">
+                                    <span id="Type 2">Type 2</span>
+                                    <input type="radio" name="Diabetes" id="None">
+                                    <span id="None">None</span>
+                                </div>
+                            </div>
+
+                                <div class="labeldiv">
+                                    <label for="Seizure Disorder">Seizure Disorder(if yes, frequency and type if known):</label>
+                                <input type="text" name="Seizure Disorder" id="Seizure-disorder" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                <div class="labeldiv">
+                                    <label for="Others">Other/s(specify):</label>
+                                <input type="text" name="Others" id="Others" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                               <div class="labeldiv">
+                                <label for="Mental Health Problem/s">Behavioral/psychiatric disorder/s or impairment/s <br>(specify):</label>
+                                <input type="text" name="Mental Health Problem/s" id="Mental-problems" class="one" placeholder="Leave blank if none/unknown">
+                               </div>
+
+                                <div class="labeldiv">
+                                    <label for="Current Medication">List down all your current medication (with for what <br> and how often do you take it:</label>
+                                <input type="text" name="Current Medication" id="Current-medication" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                <div class="labeldiv">
+                                    <label for="Vaccine/s">Vaccine/s(Specify what and when administered):</label>
+                                <input type="text" name="Vaccine/s" id="Vaccines" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                <div class="labeldiv">
+                                    <label for="Past medical condition">List down your past medical condition:</label>
+                                <input type="text" name="Past medical condition" id="Past-medical-condition" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                <div class="labeldiv"><label for="Previous surgery/hospitalization">List down your previous surgery/hospitalization:</label>
+                                    <input type="text" name="Previous surgery/hospitalization" id="Previous-surgery/hospitalization" class="one" placeholder="Leave blank if none/unknown"></div>
+
+                               <div class="labeldiv">
+                                <label for="Special Dietary Need">Special Dietary Need/s(with doctor's instruction):</label>
+                                <input type="text" name="Special Dietary Need" id="Special-Dietary-Need" class="one" placeholder="Leave blank if none/unknown">
+                               </div>
+
+                                <div class="twocoldiv">
+                                    <div class="labeldiv">
+                                        <label for="height">Height:</label>
+                                    <input type="number" name="height" id="Height" class="two" placeholder="(cm)">
+                                    </div>
+                                    <div class="labeldiv">
+                                        <label for="weight"> Weight:</label>
+                                    <input type="number" name="weight" id="Weight" class="two" placeholder="(kg)">
+                                    </div>
+                                </div>
+                               
+                               <div class="labeldiv">
+                                <label for="Blood Type">Blood Type:</label>
+                                <input type="text" name="Blood Type" id="Blood-type" class="one" placeholder="Leave blank if none/unknown">
+                               </div>
+
+                                <div class="labeldiv">
+                                    <label for="Eye color">Eye color:</label>
+                                <input type="text" name="Eye color" id="Eye-color" class="one" placeholder="If both different write (left *color, right *color)">
+                                </div>
+
+                                <div class="labeldiv">
+                                    <label for="Hair color">Hair color:</label>
+                                <input type="text" name="Hair color" id="Hair-color" class="one" placeholder="If dyed, write the dyed color and natural color">
+                                </div>
+
+                               <div class="labeldiv">
+                                <label for="Advance Directive">Advance Directive:</label>
+                                <input type="text" name="Advance Directive" id="Advance-directive" class="one" placeholder="Leave blank if none/unknown">
+                               </div>
+
+                               <div class="labeldiv">
+                                <label for="DNR">Do-not-resuscitate order(DNR):</label>
+                                <div class="DNRchoices">
+                                <input type="radio" name="DNR" id="Yes">
+                                <span id="Yes">Have</span>
+                                <input type="radio" name="DNR" id="No">
+                                <span id="No">None</span>
+                            </div>
+                        </div>
+
+                                <div class="labeldiv">
+                                    <label for="Prohobited medical care">Prohobited medical care:</label>
+                                <input type="text" name="Prohobited medical care" id="Prohobited-medical-care" class="one" placeholder="Leave blank if none/unknown">
+                                </div>
+
+                                    <button class="form-btn"  id="profile-btn">
+                                        <p class="btn-text">submit →</p>
+                                </button>
+            </form>
+                        </div>
+                    </div>
+                </div>
+
+                 
+
+</body>
+</html>
