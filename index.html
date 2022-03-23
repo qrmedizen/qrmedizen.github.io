@@ -48,7 +48,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script type="module">
    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-  import { getAuth, signInWithPopup, GoogleAuthProvider,signOut } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
   const firebaseConfig = {
     apiKey: "AIzaSyDSCjsVUrQ57OTfsapVc5LDSqf7_RcPnG4",
     authDomain: "qr-auth-2a652.firebaseapp.com",
@@ -91,6 +91,7 @@ signinbtn.addEventListener("click", (e) => {
   });
 
 })
+const user = auth.currentUser;
 
 signoutbtn.addEventListener("click", (e) => {
   console.log(0)
@@ -99,8 +100,21 @@ signoutbtn.addEventListener("click", (e) => {
   }).catch((error) => {
     // An error happened.
   });
+
+
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
 })
-var user = firebase.auth().currentUser;
 
 
 
