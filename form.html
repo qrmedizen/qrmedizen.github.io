@@ -139,9 +139,9 @@
                                 <div class="labeldiv">
                                     <label for="Diabetes">Diabetes:</label>
                                 <div class="diabeteschoices">
-                                    <input type="radio" name="Diabetes" id="Type 1">
+                                    <input type="radio" name="Diabetes" id="Type1">
                                     <span id="Type 1">Type 1</span>
-                                    <input type="radio" name="Diabetes" id="Type 2">
+                                    <input type="radio" name="Diabetes" id="Type2">
                                     <span id="Type 2">Type 2</span>
                                     <input type="radio" name="Diabetes" id="None">
                                     <span id="None">None</span>
@@ -379,8 +379,8 @@
                     console.log("Document data:", docSnap.data());
                     document.getElementById('First-name').value = docSnap.data().firstname;
                     document.getElementById('Last-name').value = docSnap.data().lastname;
-                    document.getElementById('Male').value = docSnap.data().male;
-                    document.getElementById('Female').value = docSnap.data().female;
+                    document.getElementById('Male').checked = docSnap.data().male;
+                    document.getElementById('Female').checked = docSnap.data().female;
 
 
 
