@@ -378,6 +378,9 @@
                 if (docSnap.exists()) {
                     console.log("Document data:", docSnap.data());
                     document.getElementById('First-name').value = docSnap.data().firstname;
+                    document.getElementById('Last-name').value = docSnap.data().lastname;
+                    document.getElementById('Male').value = docSnap.data().male;
+                    document.getElementById('Female').value = docSnap.data().female;
 
 
 
