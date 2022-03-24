@@ -368,7 +368,7 @@
 
 
             window.addEventListener('load', async (event) => {
-            setTimeout(() => {
+            setTimeout(async () => {
                 console.log('page is fully loaded',auth.currentUser.uid);
             const uid = auth.currentUser.uid;
             const docRef = doc(db, "users", uid);
