@@ -272,8 +272,7 @@
                     const token = credential.accessToken;
                     // The signed-in user info.
                     const user = result.user;
-                                     console.log(user);
-   
+                    console.log(user);
                 
                     // ...
                   }).catch((error) => {
@@ -308,6 +307,7 @@
 
                 onAuthStateChanged(auth, (user) => {
                     if (user) {
+                        
                       console.log(user)
                     // User is signed in, see docs for a list of available properties
                     // https://firebase.google.com/docs/reference/js/firebase.User
@@ -331,7 +331,23 @@
                   }
                 });
                 
+                import { doc, setDoc, Timestamp } from "firebase/firestore"; 
 
+            const docData = {
+                stringExample: "Hello world!",
+                booleanExample: true,
+                numberExample: 3.14159265,
+                dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+                arrayExample: [5, true, "hello"],
+                nullExample: null,
+                objectExample: {
+                    a: 5,
+                    b: {
+                        nested: "foo"
+                    }
+                }
+            };
+            await setDoc(doc(db, "data", "one"), docData);
                 var firestore = firebase.firestore();
                 const db = firestore.collection("formData");
 
