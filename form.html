@@ -339,7 +339,7 @@
 
                 let submitButton = document.getElementById('submit-btn');
 
-                submitButton.addEventListener("click", (e) => {
+                submitButton.addEventListener("click", (e) => async function submitFunction(){
                 e.preventDefault();
                 let firstname = document.getElementById('First-name').value;
                 let lastname = document.getElementById('Last-name').value;
