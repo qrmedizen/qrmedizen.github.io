@@ -334,7 +334,21 @@
                 });
                 
 
-            const docData = {
+            
+                var firestore = firebase.firestore();
+                //const db = firestore.collection("formData");
+
+                let submitButton = document.getElementById('submit-btn');
+
+                submitButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                let firstname = document.getElementById('First-name').value;
+                let lastname = document.getElementById('Last-name').value;
+                let male = document.getElementById('Male').checked;
+                let female = document.getElementById('Female').checked;
+
+                
+                const docData = {
                 stringExample: "Hello world!",
                 booleanExample: true,
                 numberExample: 3.14159265,
@@ -349,18 +363,6 @@
                 }
             };
             await setDoc(doc(db, "data", "one"), docData);
-                var firestore = firebase.firestore();
-                const db = firestore.collection("formData");
-
-                let submitButton = document.getElementById('submit-btn');
-
-                submitButton.addEventListener("click", (e) => {
-                e.preventDefault();
-                let firstname = document.getElementById('First-name').value;
-                let lastname = document.getElementById('Last-name').value;
-                let male = document.getElementById('Male').checked;
-                let female = document.getElementById('Female').checked;
-               
 
                 db.doc().set({
                     //uid: uid,
