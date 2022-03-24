@@ -349,7 +349,7 @@
                 let female = document.getElementById('Female').checked;
 
                 try {
-  const docRef = await setDoc(collection(db, "users",uid), {
+  const docRef = await setDoc(doc(db, "users",uid), {
                     firstname: firstname,
                     lastname: lastname,
                     male: male,
