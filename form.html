@@ -371,6 +371,7 @@
             console.log('page is fully loaded',auth.currentUser.uid);
             const uid = auth.currentUser.uid;
             const docRef = doc(db, "users", uid);
+            console.log('docref',docRef);
             const docSnap = await getDoc(docRef);
                 console.log(docSnap.data())
                 if (docSnap.exists()) {
