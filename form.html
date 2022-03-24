@@ -243,7 +243,7 @@
                 <script type="module">
                    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
                   import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-                  import { doc, setDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js"; 
+                  import { getFirestore,doc, setDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js"; 
   
                   const firebaseConfig = {
                     apiKey: "AIzaSyDSCjsVUrQ57OTfsapVc5LDSqf7_RcPnG4",
@@ -257,7 +257,8 @@
                   // Initialize Firebase
                   const app = initializeApp(firebaseConfig);
                   const provider = new GoogleAuthProvider();
-                
+                  const db = getFirestore(app);
+
                   const auth = getAuth();
                 
                 const signinbtn=document.getElementById('auth-btn')
@@ -335,8 +336,6 @@
                 
 
             
-                var firestore = firebase.firestore();
-                //const db = firestore.collection("formData");
 
                 let submitButton = document.getElementById('submit-btn');
 
@@ -347,39 +346,21 @@
                 let male = document.getElementById('Male').checked;
                 let female = document.getElementById('Female').checked;
 
-                
-                const docData = {
-                stringExample: "Hello world!",
-                booleanExample: true,
-                numberExample: 3.14159265,
-                dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
-                arrayExample: [5, true, "hello"],
-                nullExample: null,
-                objectExample: {
-                    a: 5,
-                    b: {
-                        nested: "foo"
-                    }
-                }
-            };
-            //await setDoc(doc(db, "data", "one"), docData);
-
-                db.doc().set({
-                    //uid: uid,
+                try {
+  const docRef = await addDoc(collection(db, "users"), {
                     firstname: firstname,
                     lastname: lastname,
                     male: male,
                     female: female,
-                    
-                }).then(()=>{
-                    console.log("data saved");
-    //submitbtn = getElementById('submit');
-    //console.log(submitbtn);
-    //submitbtn.innertext = "submitted"
-                 }).catch((error)=>{
-                    console.log('error');
+  });
 
-                })
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+              
+
+               
             })
 
 
