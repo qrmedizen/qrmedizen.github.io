@@ -341,8 +341,8 @@
 
                 submitButton.addEventListener("click", async (e) => {
                 e.preventDefault();
-                console.log(user.uid);
-                const uid = user.uid;
+                console.log(auth.currentUser.uid);
+                const uid = auth.currentUser.uid;
                 let firstname = document.getElementById('First-name').value;
                 let lastname = document.getElementById('Last-name').value;
                 let male = document.getElementById('Male').checked;
