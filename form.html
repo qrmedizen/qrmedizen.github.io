@@ -347,7 +347,7 @@
                 let female = document.getElementById('Female').checked;
 
                 try {
-  const docRef = await addDoc(collection(db, "users"), {
+  const docRef = await setDoc(collection(db, "users",uid), {
                     firstname: firstname,
                     lastname: lastname,
                     male: male,
