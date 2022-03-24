@@ -231,10 +231,8 @@
                                     <label for="Prohobited medical care">Prohobited medical care:</label>
                                 <input type="text" name="Prohobited medical care" id="Prohobited-medical-care" class="one" placeholder="Leave blank if none/unknown">
                                 </div>
-
-                                    <button class="form-btn"  id="submit-btn">
-                                        <p class="btn-text">submit →</p>
-                                </button>
+                                <input type="submit" value="Submit" class="form-btn"  id="submit-btn">
+                                    
             </form>
                         </div>
                     </div>
@@ -348,7 +346,7 @@
                
 
                 db.doc().set({
-                    uid: uid,
+                    //uid: uid,
                     firstname: firstname,
                     lastname: lastname,
                     male: male,
