@@ -341,6 +341,7 @@
 
                 submitButton.addEventListener("click", async (e) => {
                 e.preventDefault();
+                console.log(user.uid);
                 const uid = user.uid;
                 let firstname = document.getElementById('First-name').value;
                 let lastname = document.getElementById('Last-name').value;
