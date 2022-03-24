@@ -306,7 +306,8 @@
                   
                 })
                 
-                
+                const uid = user.uid;
+
                 onAuthStateChanged(auth, (user) => {
                     if (user) {
                       console.log(user)
