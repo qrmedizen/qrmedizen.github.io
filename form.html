@@ -377,6 +377,11 @@
                 console.log(docSnap.data())
                 if (docSnap.exists()) {
                     console.log("Document data:", docSnap.data());
+                    document.getElementById('First-name').value = docSnap.data().firstname;
+
+
+
+
                 } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
