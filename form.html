@@ -320,7 +320,21 @@
 
 
 
-                    var firestore = firebase.firestore();
+                    
+                    
+                    // ...
+                  } else {
+                    // User is signed out
+                    // ...
+                    profilebtn.classList.add('hide');
+                    signoutbtn.classList.add('hide');
+                    signinbtn.classList.remove('hide');
+                
+                  }
+                });
+                
+
+                var firestore = firebase.firestore();
                 const db = firestore.collection("formData");
 
                 let submitButton = document.getElementById('submit-btn');
@@ -351,18 +365,7 @@
                 })
             })
 
-                    
-                    // ...
-                  } else {
-                    // User is signed out
-                    // ...
-                    profilebtn.classList.add('hide');
-                    signoutbtn.classList.add('hide');
-                    signinbtn.classList.remove('hide');
-                
-                  }
-                });
-                
+
                   </script>             
 
 </body>
