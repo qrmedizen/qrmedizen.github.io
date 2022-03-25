@@ -201,7 +201,7 @@ submitbtn.addEventListener("click", async (e) => {
                 const idcard = document.getElementById("id-card").checked;
                 const msg = document.getElementById("message").checked;
                 try {
-  const docRef = await setDoc(collection(db, "formData"), {
+  const docRef = await addDoc(collection(db, "formData"), {
                  fname:fname,
                  lname:lname,
                  email:email,
