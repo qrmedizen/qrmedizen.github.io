@@ -238,9 +238,7 @@ height: 1.25em;
     z-index: 1;
 }
 .txtdiv{
-    position: relative;
-    top: 0%;
-    left: 0%;
+    
     margin: auto;
     padding: auto;
     z-index: 2;
