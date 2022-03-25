@@ -347,13 +347,92 @@
                 let lastname = document.getElementById('Last-name').value;
                 let male = document.getElementById('Male').checked;
                 let female = document.getElementById('Female').checked;
+                let age = document.getElementById('Age').value;
+                let birthdate = document.getElementById('Birthdate').value;
+                let phonenumber = document.getElementById('Phone-Number').value;
+                let occupation = document.getElementById('Occupation').value;
+                let single = document.getElementById('Single').checked;
+                let separated = document.getElementById('Separated').checked;
+                let divorced = document.getElementById('Divorced').checked;
+                let widowed = document.getElementById('Widowed').checked;
+                let address1 = document.getElementById('Address1').value;
+                let address2 = document.getElementById('Address2').value;
+                let emergencycontactperson = document.getElementById('Emergency-contact-person').value;
+                let emergencycontactrelation = document.getElementById('Emergency-contact-relation').value;
+                let emergencycontactnumber = document.getElementById('Emergency-contact-number').value;
+                let healthinsuranceinformation = document.getElementById('Health-insurance-information').value;
+                let allergies = document.getElementById('Allergies').value;
+                let asthma = document.getElementById('Asthma').value;
+                let type1 = document.getElementById('Type1').checked;
+                let type2 = document.getElementById('Type2').checked;
+                let none = document.getElementById('None').checked;
+                let seizuredisorder = document.getElementById('Seizure-disorder').value;
+                let others = document.getElementById('Others').value;
+                let mentalproblems = document.getElementById('Mental-problems').value;
+                let currentmedication = document.getElementById('Current-medication').value;
+                let vaccines = document.getElementById('Vaccines').value;
+                let pastmedicalcondition = document.getElementById('Past-medical-condition').value;
+                let previoussurgery = document.getElementById('Previous-surgery/hospitalization').value;
+                let specialdietaryneed = document.getElementById('Special-Dietary-Need').value;
+                let height = document.getElementById('Height').value;
+                let weight = document.getElementById('Weight').value;
+                let bloodtype = document.getElementById('Blood-type').value;
+                let eyecolor = document.getElementById('Eye-color').value;
+                let haircolor = document.getElementById('Hair-color').value;
+                let advancedirective = document.getElementById('Advance-directive').value;
+                let yes = document.getElementById('Yes').checked;
+                let no = document.getElementById('No').checked;
+                let prohibitedmedicalcare = document.getElementById('Prohibited-medical-care').value;
+
+
+
+
 
                 try {
   const docRef = await setDoc(doc(db, "users",uid), {
                     firstname: firstname,
                     lastname: lastname,
                     male: male,
-                    female: female
+                    female: female,
+                    age:age,
+                    birthdate:birthdate,
+                    phonenumber:phonenumber,
+                    occupation:occupation,
+                    single:single,
+                    separated:separated,
+                    divorced:divorced,
+                    widowed:widowed,
+                    address1:address1,
+                    address2:address2,
+                    emergencycontactperson:emergencycontactperson,
+                    emergencycontactrelation:emergencycontactrelation,
+                    emergencycontactnumber:emergencycontactnumber,
+                    healthinsuranceinformation:healthinsuranceinformation,
+                    allergies:allergies,
+                    asthma:asthma,
+                    type1:type1,
+                    type2:type2,
+                    none:none,
+                    seizuredisorder:seizuredisorder,
+                    others:others,
+                    mentalproblems:mentalproblems,
+                    currentmedication:currentmedication,
+                    vaccines:vaccines,
+                    pastmedicalcondition:pastmedicalcondition,
+                    previoussurgery:previoussurgery,
+                    specialdietaryneed:specialdietaryneed,
+                    height:height,
+                    weight:weight,
+                    bloodtype:bloodtype,
+                    eyecolor:eyecolor,
+                    haircolor:haircolor,
+                    advancedirective:advancedirective,
+                    yes:yes,
+                    no:no,
+                    prohibitedmedicalcare:prohibitedmedicalcare,
+
+
+
   });
 
   console.log("Document written with ID: ", docRef.id);
@@ -381,6 +460,42 @@
                     document.getElementById('Last-name').value = docSnap.data().lastname;
                     document.getElementById('Male').checked = docSnap.data().male;
                     document.getElementById('Female').checked = docSnap.data().female;
+                    let age = document.getElementById('Age').value = docSnap.data().age;
+                document.getElementById('Birthdate').value= docSnap.data().birthdate;
+                  document.getElementById('Phone-Number').value= docSnap.data().phonenumber;
+                 document.getElementById('Occupation').value= docSnap.data().occupation;
+                document.getElementById('Single').checked= docSnap.data().single;
+                document.getElementById('Separated').checked= docSnap.data().separated;
+                 document.getElementById('Divorced').checked= docSnap.data().divorced;
+                document.getElementById('Widowed').checked= docSnap.data().widowed;
+                 document.getElementById('Address1').value= docSnap.data().address1;
+                document.getElementById('Address2').value= docSnap.data().address2;
+                 document.getElementById('Emergency-contact-person').value= docSnap.data().emergencycontactperson;
+                 document.getElementById('Emergency-contact-relation').value= docSnap.data().emergencycontactrelation;
+                 document.getElementById('Emergency-contact-number').value= docSnap.data().emergencycontactnumber;
+                 document.getElementById('Health-insurance-information').value= docSnap.data().healthinsuranceinformation;
+                document.getElementById('Allergies').value= docSnap.data().allergies;
+               document.getElementById('Asthma').value= docSnap.data().asthma;
+                document.getElementById('Type1').checked= docSnap.data().type1;
+                document.getElementById('Type2').checked= docSnap.data().type2;
+                document.getElementById('None').checked= docSnap.data().none;
+                 document.getElementById('Seizure-disorder').value= docSnap.data().seizuredisorder;
+                document.getElementById('Others').value= docSnap.data().others;
+                 document.getElementById('Mental-problems').value= docSnap.data().mentalproblems;
+                 document.getElementById('Current-medication').value= docSnap.data().currentmedication;
+                document.getElementById('Vaccines').value= docSnap.data().vaccines;
+                document.getElementById('Past-medical-condition').value= docSnap.data().pastmedicalcondition;
+                document.getElementById('Previous-surgery/hospitalization').value= docSnap.data().previoussurgery;
+                document.getElementById('Special-Dietary-Need').value= docSnap.data().specialdietaryneed;
+                document.getElementById('Height').value= docSnap.data().height;
+                document.getElementById('Weight').value= docSnap.data().weight;
+                document.getElementById('Blood-type').value= docSnap.data().bloodtype;
+                document.getElementById('Eye-color').value= docSnap.data().eyecolor;
+                document.getElementById('Hair-color').value= docSnap.data().haircolor;
+                document.getElementById('Advance-directive').value= docSnap.data().advancedirective;
+                document.getElementById('Yes').checked= docSnap.data().yes;
+                document.getElementById('No').checked= docSnap.data().no;
+                document.getElementById('Prohibited-medical-care').value= docSnap.data().prohibitedmedicalcare;
 
 
 
