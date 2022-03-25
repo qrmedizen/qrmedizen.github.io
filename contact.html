@@ -199,7 +199,7 @@ submitbtn.addEventListener("click", async (e) => {
                 const dgtg = document.getElementById("dog-tag").checked;
                 const circlependant = document.getElementById("circle-pendant").checked;
                 const idcard = document.getElementById("id-card").checked;
-                const msg = document.getElementById("message").checked;
+                const msg = document.getElementById("message").value;
                 try {
   const docRef = await addDoc(collection(db, "formData"), {
                  fname:fname,
