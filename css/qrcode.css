@@ -1,0 +1,133 @@
+#reader__scan_region{
+    border: 0px !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+#reader{
+    border: 0px !important;
+}
+
+#reader img{
+    display: none !important;
+}
+
+#reader__filescan_input{
+    padding: 1em !important;
+}
+#reader__dashboard_section_fsr span{
+display: none !important;
+}
+
+#reader__dashboard_section_csr button{
+    padding: 1em 3em;
+    background: linear-gradient(to bottom, #ecf9ff,#cbe6ff);;
+    color: #000;
+    border-radius: 2px;
+    z-index: 5;
+}
+#reader__dashboard_section_swaplink{
+    padding: 1em;
+    margin-top: 10em !important;
+    color: #fff;
+    position: relative !important;
+    top:80% !important;
+}
+#reader__dashboard_section_fsr{
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto !important;
+    padding: auto !important;
+}
+
+#reader{
+    background:linear-gradient(to bottom, #27aae1,#0077e7);
+    padding: 5em 5em !important;
+    width: 50% !important;
+    border-radius: 1rem;
+    filter: drop-shadow(5px 5px 10px #36404455);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: absolute;
+   
+   
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#reader__dashboard_section{
+    height: 8rem !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+
+}
+
+#reader__dashboard{
+    width: 100% !important;
+}
+
+#reader__dashboard_section_fsr input{
+    color:#fff !important;
+}
+
+
+label{
+    color: white;
+}
+#uploadimg{
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  left: 39%;
+  width: 3rem;
+  display: none;
+}
+
+#reader__filescan_input{
+    font-family: 'Poppins' !important;
+    font-size: 1.2rem;
+    width: 20rem !important;
+    float:center !important;
+    justify-self: center !important;
+    display: flex;
+    margin: 0 !important;
+    padding-left: 5rem !important;
+}
+#reader__dashboard_section div{
+margin: auto !important;
+padding: auto !important;
+float: center !important;
+}
+
+.qrdata{
+    margin-top:5rem;
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100% ;
+}
+.datalabel{
+    width: 30rem;
+    font-weight: 700;
+    font-size: 1rem;
+    background: linear-gradient(to bottom, #27aae1,#0077e7);
+    background-clip: text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+.dataval{
+    font-size: 1.5rem;
+}
+.datafield{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}

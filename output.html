@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRMedizen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/qrcode.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="navbar">
+            <img src="img/logo final.svg" alt="" class="logo">
+            <ul class="nav-links">
+                <li class="link"><a href="index.html">Home</a></li>
+                <li class="link"><a href="about.html">About</a></li>
+                <li class="link"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="horz-bar">
+                <h1 class="logo-title">QRMedizen</h1>
+                <div class="auth-links">
+                    <button class="auth-btn" id="auth-btn">
+                            <p class="btn-text">Login/Register</p>
+                    </button>
+                    <button class="auth-btn hide " id="profile-btn" onclick="window.location.href='form.html';">
+                        <p class="btn-text">Profile</p>
+                </button>
+                <button class="logout-btn hide" id="signout-btn">
+                    <p class="btn-text">Logout</p>
+            </button>
+                </div>
+
+            </div>
+            <div class="main-wrapper">
+                <!--<h1 class="main-head">QR code</h1>-->
+
+                <div id="reader">
+
+                </div>
+
+                <div class="qrdata" id="qrdata">
+
+                    <div class="datafield">
+                        <p class="datalabel">Name</p>
+                        <p class="dataval" id="name"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Sex</p>
+                        <p class="dataval" id="sex"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Age</p>
+                        <p class="dataval" id="age"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Birthdate</p>
+                        <p class="dataval" id="birthdate"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Phone number</p>
+                        <p class="dataval" id="phone-number"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Occupation</p>
+                        <p class="dataval" id="occupation"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Marital Status</p>
+                        <p class="dataval" id="marital-status"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Address</p>
+                        <p class="dataval" id="address"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Emergency Contact Person</p>
+                        <p class="dataval" id="emergency-contact-person"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Emergency Contact Relation</p>
+                        <p class="dataval" id="emergency-contact-relation"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Emergency Contact Number</p>
+                        <p class="dataval" id="emergency-contact-number"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Health Insurance Information</p>
+                        <p class="dataval" id="health-insurance-information"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Allergy/ies</p>
+                        <p class="dataval" id="allergies"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Asthma</p>
+                        <p class="dataval" id="asthma"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Diabetes</p>
+                        <p class="dataval" id="diabetes"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Seizure Disorder</p>
+                        <p class="dataval" id="seizure-disorder"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Other/s</p>
+                        <p class="dataval" id="others"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Mental Health Problem/s</p>
+                        <p class="dataval" id="mental-problems"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Current Medication</p>
+                        <p class="dataval" id="current-medication"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Vaccine/s</p>
+                        <p class="dataval" id="vaccines"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Past medical condition</p>
+                        <p class="dataval" id="past-medical-condition"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Previous surgery/hospitalization</p>
+                        <p class="dataval" id="previous-surgery-hospitalization"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Special Dietary Need</p>
+                        <p class="dataval" id="special-dietary-need"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Height</p>
+                        <p class="dataval" id="height"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Weight</p>
+                        <p class="dataval" id="weight"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Blood Type</p>
+                        <p class="dataval" id="blood-type"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Eye color</p>
+                        <p class="dataval" id="eye-color"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Hair color</p>
+                        <p class="dataval" id="hair-color"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Advance Directive</p>
+                        <p class="dataval" id="advance-directive"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">DNR</p>
+                        <p class="dataval" id="dnr"></p>
+                    </div>
+
+                    <div class="datafield">
+                        <p class="datalabel">Prohibited medical care</p>
+                        <p class="dataval" id="prohibited-medical-care"></p>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type="module">
+      
+     
+
+    </script>
+
+    
+    
+    <!--To Read QR Code-->
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script type="module">
+//import {Html5QrcodeScanner,Html5Qrcode} from "html5-qrcode/html5-qrcode.min.js"
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+      import { getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+      import { getFirestore,doc, setDoc, Timestamp,addDoc, collection,getDoc } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js"; 
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDSCjsVUrQ57OTfsapVc5LDSqf7_RcPnG4",
+        authDomain: "qr-auth-2a652.firebaseapp.com",
+        projectId: "qr-auth-2a652",
+        storageBucket: "qr-auth-2a652.appspot.com",
+        messagingSenderId: "218316837225",
+        appId: "1:218316837225:web:1732aa7a5ef69eee902df8"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const provider = new GoogleAuthProvider();
+      const db = getFirestore(app);
+
+
+async function onScanSuccess(decodedText, decodedResult) {
+    document.getElementById("qrdata").style.display="flex";
+  // handle the scanned code as you like, for example:
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+    let uid = decodedText;
+    const docRef = doc(db, "users", uid);
+            console.log('docref',docRef);
+            const docSnap = await getDoc(docRef);
+                console.log(docSnap.data())
+                if (docSnap.exists()) {
+                    console.log("Document data:", docSnap.data());
+                    document.getElementById('name').innerHTML = docSnap.data().firstname + "&nbsp;" + docSnap.data().lastname ;
+
+                    if (docSnap.data().male){
+                        document.getElementById('sex').innerHTML = "Male"
+                    }
+                    if (docSnap.data().female){
+                        document.getElementById('sex').innerHTML = "Female"
+                    }
+                   
+                    document.getElementById('age').innerHTML = docSnap.data().age + "&nbsp;years" ;
+
+                    document.getElementById('birthdate').innerHTML = docSnap.data().birthdate;
+                    document.getElementById('phone-number').innerHTML = docSnap.data().phonenumber;
+                    document.getElementById('occupation').innerHTML = docSnap.data().occupation;
+                    if (docSnap.data().single){
+                        document.getElementById('marital-status').innerHTML = "Single"
+                    }
+                    if (docSnap.data().divorced){
+                        document.getElementById('marital-status').innerHTML = "Single"
+                    }
+                    if (docSnap.data().separated){
+                        document.getElementById('marital-status').innerHTML = "Separated"
+                    }
+                    if (docSnap.data().widowed){
+                        document.getElementById('marital-status').innerHTML = "Widowed"
+                    }
+                    document.getElementById('address').innerHTML = docSnap.data().address1 + "<br>" + docSnap.data().address2;
+                    document.getElementById('emergency-contact-person').innerHTML = docSnap.data().emergencycontactperson;
+                    document.getElementById('emergency-contact-relation').innerHTML = docSnap.data().emergencycontactrelation;
+                    document.getElementById('emergency-contact-number').innerHTML = docSnap.data().emergencycontactnumber;
+                    document.getElementById('health-insurance-information').innerHTML = docSnap.data().healthinsuranceinformation;
+                    document.getElementById('allergies').innerHTML = docSnap.data().allergies;
+                    document.getElementById('asthma').innerHTML = docSnap.data().asthma;
+                    if (docSnap.data().type1){
+                        document.getElementById('diabetes').innerHTML = "Type 1"
+                    }
+                    if (docSnap.data().type2){
+                        document.getElementById('diabetes').innerHTML = "Type 2"
+                    }
+                    if (docSnap.data().none){
+                        document.getElementById('diabetes').innerHTML = "None"
+                    }
+                    document.getElementById('seizure-disorder').innerHTML = docSnap.data().seizuredisorder;
+                    document.getElementById('others').innerHTML = docSnap.data().others;
+                    document.getElementById('mental-problems').innerHTML = docSnap.data().mentalproblems;
+                    document.getElementById('current-medication').innerHTML = docSnap.data().currentmedication;
+                    document.getElementById('vaccines').innerHTML = docSnap.data().vaccines;
+                    document.getElementById('past-medical-condition').innerHTML = docSnap.data().pastmedicalcondition;
+                    document.getElementById('previous-surgery-hospitalization').innerHTML = docSnap.data().previoussurgery;
+                    document.getElementById('special-dietary-need').innerHTML = docSnap.data().specialdietaryneed;
+                    document.getElementById('height').innerHTML = docSnap.data().height +"&nbsp;cm";
+                    document.getElementById('weight').innerHTML = docSnap.data().weight +"&nbsp;kg";
+                    document.getElementById('blood-type').innerHTML = docSnap.data().bloodtype;
+                    document.getElementById('eye-color').innerHTML = docSnap.data().eyecolor;
+                    document.getElementById('hair-color').innerHTML = docSnap.data().haircolor;
+                    document.getElementById('advance-directive').innerHTML = docSnap.data().advancedirective;
+                    if (docSnap.data().yes){
+                        document.getElementById('dnr').innerHTML = "Have"
+                    }
+                   
+                    if (docSnap.data().no){
+                        document.getElementById('dnr').innerHTML = "None"
+                    }
+
+                    document.getElementById('prohibited-medical-care').innerHTML = docSnap.data().prohibitedmedicalcare;
+
+
+
+                } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+}
+
+
+
+
+}
+
+function onScanFailure(error) {
+  // handle scan failure, usually better to ignore and keep scanning.
+  // for example:
+  console.warn(`Code scan error = ${error}`);
+}
+
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10, qrbox: {width: 10, height: 10} },
+  /* verbose= */ false);
+html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+        console.log("hi")
+    </script>
+   
+
+
+
+
+   <body>
+    
+</body>
+</html>

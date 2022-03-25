@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QRMedizen</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
     <script src="app.js"></script>
 </head>
 <body>
@@ -38,25 +39,62 @@
                 <h1 class="main-head">
                      Let's get in touch!             
                 </h1>
-                <p class="subhead">
+                <p class="subhead subhead-contact">
                     We welcome and recognize your thoughts and question. Here’s a way you can contact us. 
 
                     You can contact us through
                     
                      </p>
 
-                     <div class="soc-icons">
-                       <div class="email-wrap">
-                        <a href="" class="soc"><img src="img/email.png" alt="">  </a>  
-                        <p class="emailid">QRMedizen1@gmail.com</p>
-                       </div>
-
-                       <div class="socmedia">
-                        <a href="" class="soc"><img src="img/instagram.png" alt=""></a>
-                        <a href="" class="soc"><img src="img/fb.png" alt=""></a>
-                        <a href="" class="soc"><img src="img/twitter.png" alt=""></a>
-                       </div>
-                    </div>
+                     
+                    <form id="contactform" >
+             
+                      <div class="twocoldiv">
+                          <div class="labeldiv">
+                              <label for="first name">First Name:</label>
+                           <input type="text" name="First Name" id="First-name" class="two" placeholder="Enter your first, second name" required>
+                           </div>
+                           <div class="labeldiv">
+                              <label for="last name"> Last name:</label>
+                           <input type="text" name="Last Name" id="Last-name" class="two" placeholder="Enter your last name" required>
+                              </div>
+                              </div>
+  
+                              <div class="labeldiv">
+                                  <label for="Email">Email:</label>
+                              <input type="text" name="Email" id="Email" class="one" placeholder="example@gmail.com" required>
+                              </div>
+                              
+                              <div class="labeldiv">
+                                  <label for="Product">Product Order:</label>
+                              <div class="productchoices">
+                              <input type="checkbox" name="Product" id="dog-tag">
+                                      <span id="Dog tag">Dog tag</span>
+                                      <input type="checkbox" name="Product" id="circle-pendant">
+                                      <span id="Circle pendant">Circle pendant</span>
+                                      <input type="checkbox" name="Product" id="id-card">
+                                      <span id="ID Card">ID Card</span>
+                                  </div>
+                              </div>
+  
+                              <div class="labeldiv">
+                                  <label for="message">Message (optional):</label>
+                                  <textarea id="message" name="message" class="one" placeholder="Ask us anything" style="height:200px"></textarea>
+  
+                                  <div>
+                                      <input type="submit" value="Submit" class="form-btn"  id="form-btn">
+                                  </div>
+                                </form>  
+                                <div class="soc-icons">
+                                  
+           
+                                  <div class="socmedia">
+                                    <a href="mailto:QRMedizen1@gmail.com" id="emailimg" class="soc "><img src="img/email.svg" alt=""></a>
+                                    <a href="" class="soc"><img src="img/ig.svg" alt=""></a>
+                                    <a href="" class="soc"><img src="img/fb.svg" alt=""></a>
+                                   <a href="" class="soc"><img src="img/twitter.svg" alt=""></a>
+                                  </div>
+                               </div>         
             </div>
         </div>
     </div>
