@@ -187,6 +187,38 @@
       }
     });
     
+
+const submitbtn= document.getElementById("form-btn");
+submitbtn.addEventListener("click", async (e) => {
+                e.preventDefault();
+                const fname = document.getElementById("First-name").value;
+                const lname = document.getElementById("Last-name").value;
+                const email = document.getElementById("email").value;
+                const dgtg = document.getElementById("dog-tag").checked;
+                const circlepandant = document.getElementById("circle-pandent").checked;
+                const idcard = document.getElementById("id-card").checked;
+                const msg = document.getElementById("message").checked;
+                try {
+  const docRef = await setDoc(collection(db, "formData"), {
+                 fname:fname,
+                 lname:lname,
+                 email:email,
+                 dgtg:dgtg,
+                 circlependant:circlepandant,
+                 idcard:idcard,
+                 msg:msg
+
+  });
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+              
+
+               
+            })
+
+
+
       </script>
 </body>
 </html>
