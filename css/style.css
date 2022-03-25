@@ -202,4 +202,46 @@ height: 1.25em;
     font-size: 1.1rem;
 }
 
+.imgcontainer{
+    display: flex;
+    width: 50rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
+}
+
+.productwrap{
+    display: flex;
+    width: 15rem;
+    flex-direction: column;
+    margin: 2em;
+}
+
+.imgwrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width:12rem;
+    height:18rem;
+    overflow: hidden;
+    margin: 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    -webkit-filter: drop-shadow(1rem 1rem 1rem #00000055);
+    filter: drop-shadow(1rem 1rem 1rem #00000055);
+}
+
+.imgwrapper img{
+    height: 100%;
+    z-index: 1;
+}
+.txtdiv{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    margin: auto;
+    padding: auto;
+    z-index: 2;
+}
