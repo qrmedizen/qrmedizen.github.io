@@ -155,7 +155,7 @@
     signoutbtn.addEventListener("click", (e) => {
       console.log(0)
       signOut(auth).then(() => {
-    
+        window.location.assign('index.html');     
         // Sign-out successful.
       }).catch((error) => {
         // An error happened.
@@ -192,7 +192,7 @@ submitbtn.addEventListener("click", async (e) => {
                 e.preventDefault();
                 const fname = document.getElementById("First-name").value;
                 const lname = document.getElementById("Last-name").value;
-                const email = document.getElementById("email").value;
+                const email = document.getElementById("Email").value;
                 const dgtg = document.getElementById("dog-tag").checked;
                 const circlepandant = document.getElementById("circle-pandent").checked;
                 const idcard = document.getElementById("id-card").checked;
